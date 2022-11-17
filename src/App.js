@@ -1,13 +1,21 @@
 
 import './App.scss';
-import { Button } from 'antd';
 import 'antd/dist/antd.css';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import Home from "./Home/Home"
 
 function App() {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home/>
+    },
+  ]);
   return (
-    <div className="App">
-      <Button>Test Packeer</Button>
-    </div>
+    <RouterProvider router={router} />
   );
 }
 
